@@ -1,0 +1,25 @@
+{
+  "name": "top_tags",
+  "version": "1.0.0",
+  "description": "clustering stackoverflow post tags for R language",
+  "main": "top.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "R",
+    "clustering",
+    "stackoverflow",
+    "post",
+    "tag",
+    "datamining",
+    "assocation",
+    "cluster"
+  ],
+  "author": "Behzad Khosravifar",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "big-xml-streamer": "0.0.5",
+    "clear": "^0.1.0"
+  }
+}
