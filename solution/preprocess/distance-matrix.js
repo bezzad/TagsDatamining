@@ -54,7 +54,16 @@ fs.readFile(__dirname + "/r-tags.csv", 'utf8', function (err, postsTags) {
             }
 
             if (++itemsProcessed === aryPostTags.length) {
-                fs.writeFile(__dirname + "/distance-matrix.json", JSON.stringify(distanceMatrix), err => {
+                var headers = Object.getOwnPropertyNames(objTopFreqTags);
+                var matrix_csv = headers.join(",") + "\n";
+                for (var itag in objTopFreqTags) {
+                    matrix_csv += itag; // row header
+                    for (var jtag in objTopFreqTags) {
+                        matrix_csv += "," + distanceMatrix[itag][jtag]; // row values
+                    }
+                    matrix_csv += "\n";
+                }
+                fs.writeFile(__dirname + "/../distance-matrix.csv", matrix_csv, err => {
                     console.error(err);
                 });
                 console.log("completed");
