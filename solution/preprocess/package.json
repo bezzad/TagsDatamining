@@ -1,8 +1,8 @@
 {
-  "name": "top_tags",
-  "version": "1.0.0",
-  "description": "clustering stackoverflow post tags for R language",
-  "main": "top.js",
+  "name": "frequently_tags_clustering",
+  "version": "1.0.1",
+  "description": "clustering stackoverflow posts tags correlated by `r` tag",
+  "main": "r-tags-histogram.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +14,9 @@
     "tag",
     "datamining",
     "assocation",
-    "cluster"
+    "cluster",
+    "correlation",
+    "hierarchically"
   ],
   "author": "Behzad Khosravifar",
   "license": "GPL-3.0",
