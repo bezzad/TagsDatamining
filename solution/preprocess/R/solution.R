@@ -12,7 +12,7 @@ colors = c("red", "blue", "green", "black", "gray", "#189693", "#58f2ac", "#1234
            "#11aa55", "#2E9FDF", "#acd451", "#115566", "#44ac55", "#4c5d6b", "#00AFBB", "#5c1893", "#009695", "#453455")
 
 distanceMat <- read.delim("../results/distance-matrix.csv", header = TRUE, sep=",")
-df <- scale(distanceMat) # scaling/standardizing
+#df <- scale(distanceMat) # scaling/standardizing
 
 # Compute distances and hierarchical clustering
 d <- dist(as.matrix(distanceMat))                 # find distance matrix 
@@ -42,10 +42,6 @@ rect.hclust(hc, k = 20, border = 2:5)
 plot(as.phylo(hc), type = "unrooted", cex = 0.5, no.margin = FALSE)
 
 # Fan
-plot(as.phylo(hc), type = "fan")
-
-
-
 plot(as.phylo(hc), type = "fan", tip.color = colors[clusters],
      label.offset = 0.1, cex = 0.7)
 
@@ -59,7 +55,7 @@ x <- as.phylo(hc)
 
 # Size reflects miles per gallon
 plot(x, type = "fan", tip.color = colors[clusters], label.offset = 0.1, 
-     cex = 0.6, col = "red", edge.color = colors)
+     cex = 0.6, edge.color = colors[clusters])
 
 plot(x, type = "fan", use.edge.length = TRUE,
      node.pos = NULL, show.tip.label = TRUE, show.node.label = FALSE,
@@ -84,7 +80,7 @@ fviz_dend(hc, k = 20, # Cut in four groups
 
 
 fviz_dend(hc, cex = 0.5, k = 20, 
-          k_colors = colors, type = "circular")
+          k_colors = colors[clusters], type = "circular")
 
 install.packages('igraph')
 require("igraph")
